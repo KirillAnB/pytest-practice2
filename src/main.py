@@ -1,3 +1,5 @@
+from typing import Union
+
 class Bikes():
     engine = 49
     type = 'scooter'
@@ -7,6 +9,17 @@ class Bikes():
 
 
 
-bike1 = Bikes("Honda", 'Super cub')
+class Calc():
+    @staticmethod
+    def divine(a,b):
+        if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+            raise ValueError("Params are not invalid")
+        if b == 0:
+            raise ZeroDivisionError("Do not divide by zero")
+        return a / b
 
-print(bike1.engine)
+    @staticmethod
+    def plus(a,b):
+        if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+            raise ValueError("Params are not valid")
+        return a + b
